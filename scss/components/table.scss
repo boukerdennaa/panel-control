@@ -1,0 +1,25 @@
+.crud__table {
+    width: 80%;
+    height: auto;
+    margin-bottom: 1em;
+  }
+  
+  table {
+    width: 100%;
+  }
+  
+  th {
+    background-color: $white;
+    border: 1px solid $black;
+    padding: 1em;
+  }
+  
+  td {
+    background-color: $white;
+    border: 1px solid $black;
+    padding: 1em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  

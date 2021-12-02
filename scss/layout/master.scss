@@ -1,0 +1,258 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /*====================
+  =======Structure======
+  ======================*/
+  
+  body {
+    background-color: $background-color;
+    display: flex;
+    flex-direction: column;
+    margin: 1em auto;
+    min-height: 100vh;
+    width: 90%;
+  }
+  
+  header {
+    display: flex;
+    height: 10vh;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1em;
+  }
+  
+  .header-left {
+    display: flex;
+    justify-content: start;
+  }
+  
+  main {
+    margin: 1em 0;
+    width: 100%;
+  }
+  
+  footer {
+    margin-top: auto;
+    width: 100%;
+  }
+  
+  .main-element {
+    margin-bottom: 2em;
+  }
+  
+  .footer-element {
+    margin-bottom: 1em;
+  }
+  
+  
+  /*====================
+  ========Image=========
+  ======================*/
+  
+  img {
+    max-width: 100%;
+  }
+  
+  /*====================
+  ========Logo=========
+  ======================*/
+  
+  .logo {
+    width: max-content;
+  
+    svg {
+      height: 3em;
+      width: 3em;
+  
+      path {
+        fill: $white;
+      }
+    }
+  }
+  
+  /*====================
+  ========Title=========
+  ======================*/
+  
+  .title {
+    margin-left: 1em;
+  
+    h1 {
+      text-align: left;
+    }
+  }
+  
+  /*====================
+  ========Subtitle======
+  ======================*/
+  
+  .subtitle {
+    background-color: $second-bgd-color;
+    padding: 0.2em 0;
+    width: 100%;
+  
+    h2 {
+      text-align: center;
+    }
+  }
+  
+  /*====================
+  =========CRUD=========
+  ======================*/
+  
+  .crud {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 100%;
+    gap: 3em;
+  }
+  
+  .footer-element {
+    width: 100%;
+  
+    p {
+      text-align: center;
+    }
+  }
+  
+  @media (max-width: 479px) {
+    header {
+      height: 2vh;
+    }
+  
+    .main-element {
+      margin: 1.5em 0;
+    }
+  
+    .footer-element {
+      margin: 1em 0;
+    }
+  
+    h1 {
+      font-size: 2em;
+    }
+  
+    h2 {
+      font-size: 1.5em;
+    }
+  
+    .logo svg {
+      height: 2em;
+      width: 2em;
+    }
+  
+    .title {
+      margin-left: 0.5em;
+    }
+  
+    .crud {
+      display: block;
+    }
+  
+    .crud__table, .crud__form {
+      min-width: 100%;
+      max-width: 100%;
+    }
+  
+    .crud__table-grid {
+      grid-gap: 0;
+    }
+  
+    .crud__table-flex {
+      gap: 0;
+    }
+  
+    .crud__store-button {
+      font-size: 1em;
+      margin-top: 0.5em;
+    }
+  }
+  
+  @media (max-width: 1024px) {
+    header {
+      height: 2vh;
+    }
+  
+    .main-element {
+      margin: 1.5em 0;
+    }
+  
+    .footer-element {
+      margin: 1em 0;
+    }
+  
+    h1 {
+      font-size: 2em;
+    }
+  
+    h2 {
+      font-size: 1.5em;
+    }
+  
+    .logo svg {
+      height: 2em;
+      width: 2em;
+    }
+  
+    .title {
+      margin-left: 0.5em;
+    }
+  
+    .crud {
+      display: block;
+    }
+  
+    .crud__table, .crud__form {
+      min-width: 100%;
+      max-width: 100%;
+    }
+  
+    .crud__table-grid {
+      grid-gap: 0;
+    }
+  
+    .crud__table-flex {
+      gap: 0;
+    }
+  
+    .crud__store-button {
+      font-size: 1em;
+      margin-top: 0.5em;
+    }
+  }
+  
+  @media (min-width: 1920px) {
+    h1 {
+      font-size: 3.5em;
+    }
+  
+    h2 {
+      font-size: 3em;
+    }
+  
+    .logo svg {
+      height: 4em;
+      width: 4em;
+    }
+  
+    .crud__form-label label {
+      font-size: 1em;
+    }
+  
+    .crud__form-input {
+      input, textarea, select {
+        font-size: .8em;
+        padding: 0.3em;
+      }
+    }
+  
+    .crud__store-button, .footer-element p {
+      font-size: 1.5em;
+    }
+  }
+  

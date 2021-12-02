@@ -1,0 +1,53 @@
+/*====================
+======Typography======
+======================*/
+
+h1, h2, h3, h4, h5, h6, a, p {
+    color: hsl(0, 0%, 100%);
+  }
+  
+  h1, h2, h3, h4 {
+    font-family: "Ubuntu";
+  }
+  
+  h5, h6 {
+    font-family: "Ubuntu Condensed";
+  }
+  
+  a, td, p, button {
+    font-family: "Ubuntu";
+  }
+  
+  h1 {
+    font-size: 2.5em;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  
+  h2 {
+    font-size: 2em;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  
+  h4 {
+    font-weight: 600;
+    text-decoration: none;
+  }
+  
+  a {
+    font-weight: 600;
+    text-decoration: none;
+    transition: 300ms;
+  
+    &:focus, &:hover {
+      outline: none;
+      outline-offset: 0;
+      text-decoration: none;
+    }
+  }
+  
+  p:hover {
+    color: #253786;
+  }
+  

@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>Título diferente al primero</title>
+		<meta name="description" content="descripción de la web alternativa a la primera, se recomienda 90 caracteres ni más ni menos">
+        <meta name="keywords" 	 content="palabras clave, separadas, por comas">
+
+        <!-- metas para facebook -->
+		<!-- 
+        <meta property="fb:app_id"        content="añadir identificador" /> 
+		<meta property="og:url"           content="url web" />
+		<meta property="og:type"          content="website" />
+		<meta property="og:title"         content=""/>
+		<meta property="og:description"   content="" /> 
+        -->
+
+        <link href="css/app.css" rel="stylesheet">
+    </head>
+    
+    <body>
+        <header>
+            <div class="header-left">
+                <div class="header-element logo">
+                    <svg viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M8 11C7.45 11 7 10.55 7 10V8C7 7.45 7.45 7 8 7C8.55 7 9 7.45 9 8V10C9 10.55 8.55 11 8 11M17 10V8C17 7.45 16.55 7 16 7C15.45 7 15 7.45 15 8V10C15 10.55 15.45 11 16 11C16.55 11 17 10.55 17 10M22 5V20C22 21.1 21.1 22 20 22H4C2.9 22 2 21.1 2 20V5C2 3.9 2.9 3 4 3H20C21.1 3 22 3.9 22 5M4 20L13.06 20C12.96 19.35 12.89 18.64 12.83 17.94C12.56 17.96 12.3 18 12 18C8.24 18 6.31 15.73 6.23 15.63C5.88 15.21 5.94 14.58 6.36 14.22C6.78 13.87 7.41 13.93 7.77 14.35C7.83 14.43 9.23 16 12 16C12.27 16 12.5 15.97 12.74 15.95C12.71 14.75 12.73 13.74 12.74 13.26H10.93C10.28 13.26 9.75 12.7 9.75 12C9.77 11.75 10.07 7.82 11 5H4L4 20M20 20L20 5H12.6C11.74 7.19 11.37 10.73 11.27 11.76H13.08C13.72 11.76 14.25 12.32 14.25 13C14.25 13.04 14.21 14.15 14.24 15.6C15.54 15.11 16.22 14.35 16.23 14.34C16.58 13.92 17.21 13.85 17.63 14.2C18.06 14.55 18.12 15.18 17.77 15.61C17.71 15.68 16.55 17.05 14.32 17.68C14.38 18.5 14.46 19.29 14.58 20H20Z" />
+                    </svg>
+                </div>
+
+                <div class="header-element title">
+                    <h1>Panel de control</h1>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="main-element subtitle">
+                <h2></h2>
+            </div>
+            <div class="main-element crud">
+                <div class="crud__table">
+                    <table>
+                        <tr>
+                            <th>ID</th>
+                            <th>Email</th>
+                            <th>Nombre</th>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="crud__form">
+                    <form class="crud__admin-form" id="crud__user-form" action="/users/create" autocomplete="off"> 
+                        <div class="wrapper">
+                            <div class="buttonWrapper">
+                                <button class="tab-button active" data-id="form1">Contenido</button>
+                                <button class="tab-button" data-id="form2">Tienda</button>
+                            </div>
+                            <div class="contentWrapper">
+                                <div class="content active" id="form1">
+                                    <div class="crud__form-two-columnss">
+                                        <div class="crud__form-element">
+                                            <div class="crud__form-label">
+                                                <label for="title">Title</label>
+                                            </div>
+                                            <div class="crud__form-input">
+                                                <input type="text" name="title">
+                                            </div>
+                                        </div>
+                                        <div class="crud__form-element">
+                                            <div class="crud__form-label">
+                                                <label for="price">Price</label>
+                                            </div>
+          
+                                            <div class="crud__form-input">
+                                                <input type="text" name="price">
+                                            </div>
+                                        </div>
+        
+                                    </div>
+          
+                                    <div class="crud__form-element">
+                                        <button class="crud__store-button">Guardar</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content" id="form2">
+                                <div class="crud__form-two-columns">
+                                    <div class="crud__form-element">
+                                        <div class="crud__form-label">
+                                            <label for="author">Author</label>
+                                        </div>
+      
+                                        <div class="crud__form-input">
+                                            <input type="text" name="author">
+                                        </div>
+                                    </div>
+      
+                                    <div class="crud__form-element">
+                                        <div class="crud__form-label">
+                                            <label for="editor">Editor</label>
+                                        </div>
+      
+                                        <div class="crud__form-input">
+                                            <input type="text" name="editor">
+                                        </div>
+                                    </div>
+                                    <div class="crud__form-element">
+                                        <button class="crud__store-button">Guardar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="crud__form-element">
+                        <button class="crud__store-button" id="enviar">Enviar</button>
+                    </div>
+                </div>
+            </div> 
+        </main> 
+        <script src="js/app.js"></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+        <script>
+            WebFont.load({
+                google: {
+                    families: ['Ubuntu:700,700i', 'Ubuntu+Condensed:400', 'Praise']
+                }
+            });        
+        </script>
+
+        <!-- 
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+            
+            ga('create', '', 'auto');
+            ga('send', 'pageview');
+        </script> 
+        -->
+    </body>
+</html>
