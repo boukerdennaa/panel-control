@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@ckeditor/ckeditor5-engine": "^31.1.0",
     "clientjs": "^0.2.1"
   }
 }

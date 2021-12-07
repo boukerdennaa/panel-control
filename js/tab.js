@@ -1,4 +1,4 @@
-export const tab = () => {
+export const tab = () =>{
 
 let tabs = document.querySelector(".wrapper");
 let tabButton = document.querySelectorAll(".tab-button");

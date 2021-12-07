@@ -1,4 +1,4 @@
-export const form = () => {
+export const form = () =>{
 
 let formElement = document.getElementById("crud__user-form");
 let btnForm = document.querySelector(".crud__store-button");
@@ -10,4 +10,4 @@ btnForm.addEventListener('click', () => {
             console.log('Nombre:', key, 'Valor:', value);
         }
 });
-} 
+}
