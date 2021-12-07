@@ -1,22 +1,22 @@
 .crud__table {
     width: 80%;
     height: auto;
-    margin-bottom: 1em;
+    align-content: flex-start;
   }
   
   table {
     width: 100%;
+    color: $white;
+    border-collapse: collapse;
   }
   
   th {
-    background-color: $white;
-    border: 1px solid $black;
-    padding: 1em;
+    border: 1px solid $white;
+    padding: 2em;
   }
   
   td {
-    background-color: $white;
-    border: 1px solid $black;
+    border: 1px solid $white;
     padding: 1em;
     overflow: hidden;
     text-overflow: ellipsis;

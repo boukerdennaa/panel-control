@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<title>Título diferente al primero</title>
+		<title>Panel de control</title>
 		<meta name="description" content="descripción de la web alternativa a la primera, se recomienda 90 caracteres ni más ni menos">
         <meta name="keywords" 	 content="palabras clave, separadas, por comas">
 
@@ -19,7 +19,6 @@
 
         <link href="css/app.css" rel="stylesheet">
     </head>
-    
     <body>
         <header>
             <div class="header-left">
@@ -36,16 +35,23 @@
         </header>
 
         <main>
-            <div class="main-element subtitle">
-                <h2></h2>
-            </div>
             <div class="main-element crud">
                 <div class="crud__table">
                     <table>
                         <tr>
-                            <th>ID</th>
-                            <th>Email</th>
-                            <th>Nombre</th>
+                            <th>Titulo</th>
+                            <th>Author</th>
+                            <th>Price</th>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                         </tr>
                         <tr>
                             <td></td>
@@ -94,18 +100,23 @@
                                         </div>
                                         <div class="crud__form-element">
                                             <div class="crud__form-label">
-                                                <label for="price">Price</label>
+                                                <label for="author">Author</label>
                                             </div>
           
                                             <div class="crud__form-input">
-                                                <input type="text" name="price">
+                                                <input type="text" name="author">
                                             </div>
                                         </div>
-        
-                                    </div>
           
-                                    <div class="crud__form-element">
-                                        <button class="crud__store-button">Guardar</button>
+                                        <div class="crud__form-element">
+                                            <div class="crud__form-label">
+                                                <label for="editor">Editor</label>
+                                            </div>
+          
+                                            <div class="crud__form-input">
+                                                <input type="text" name="editor">
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -113,37 +124,25 @@
                                 <div class="crud__form-two-columns">
                                     <div class="crud__form-element">
                                         <div class="crud__form-label">
-                                            <label for="author">Author</label>
+                                            <label for="price">Price</label>
                                         </div>
       
                                         <div class="crud__form-input">
-                                            <input type="text" name="author">
+                                            <input type="text" name="price">
                                         </div>
-                                    </div>
-      
-                                    <div class="crud__form-element">
-                                        <div class="crud__form-label">
-                                            <label for="editor">Editor</label>
-                                        </div>
-      
-                                        <div class="crud__form-input">
-                                            <input type="text" name="editor">
-                                        </div>
-                                    </div>
-                                    <div class="crud__form-element">
-                                        <button class="crud__store-button">Guardar</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </form>
                     <div class="crud__form-element">
-                        <button class="crud__store-button" id="enviar">Enviar</button>
-                    </div>
-                </div>
+                        <button class="crud__store-button">Guardar</button>
+                    </div> 
+                </div> 
             </div> 
         </main> 
-        <script src="js/app.js"></script>
+        <script src="js/tab.js"></script>
+        <script src="js/form.js"></script>
 
         <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
         <script>

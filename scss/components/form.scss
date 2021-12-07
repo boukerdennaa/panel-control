@@ -1,22 +1,13 @@
-.crud__form {
+  .crud__form {
     width: 80%;
-    margin: 2% auto;
+    height: auto;
+    align-content: flex-start;
   }
   
-  .four-columns, .three-columns, .two-columns {
+  .two-columns {
     display: flex;
     justify-content: space-around;
     width: 100%;
-  }
-  
-  .four-columns .crud__form-element {
-    margin-bottom: 1em;
-    width: 20%;
-  }
-  
-  .three-columns .crud__form-element {
-    margin-bottom: 1em;
-    width: 30%;
   }
   
   .crud__form .crud__form-two-columns {
@@ -52,15 +43,11 @@
     font-family: $font-stack;
     font-weight: 600;
     font-size: 1em;
-    transition: color 0.5s;
   }
   
-  .crud__form-label--active label {
-    color: hsl(19, 100%, 50%);
-  }
   
   .crud__form-input {
-    input, select {
+    input {
       background-color: $white;
       border: none;
       border-bottom: 1px solid $grey;
@@ -70,25 +57,6 @@
       font-weight: 600;
       padding: 0.2em 0.5em;
       width: 100%;
-    }
-  }
-  
-  textarea {
-    width: 100%;
-    height: 150px;
-  }
-  
-  .crud__form-input {
-    input:focus, textarea:focus {
-      outline: none;
-    }
-  
-    select {
-      outline: 0 !important;
-  
-      &:focus, &:active {
-        outline: 0 !important;
-      }
     }
   }
   
@@ -118,10 +86,5 @@
     }
   }
 
-  #enviar{
-    display: block;
-    margin: 2% auto;
-    color: $black;
-  }
 
   

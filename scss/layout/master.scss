@@ -31,7 +31,7 @@
   }
   
   main {
-    margin: 1em 0;
+    margin: 5em 0;
     width: 100%;
   }
   
@@ -87,27 +87,12 @@
   }
   
   /*====================
-  ========Subtitle======
-  ======================*/
-  
-  .subtitle {
-    background-color: $second-bgd-color;
-    padding: 0.2em 0;
-    width: 100%;
-  
-    h2 {
-      text-align: center;
-    }
-  }
-  
-  /*====================
   =========CRUD=========
   ======================*/
   
   .crud {
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
     width: 100%;
     gap: 3em;
   }
@@ -210,6 +195,7 @@
     .crud__table, .crud__form {
       min-width: 100%;
       max-width: 100%;
+      margin-top: 2em;
     }
   
     .crud__table-grid {

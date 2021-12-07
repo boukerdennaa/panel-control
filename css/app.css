@@ -13,7 +13,7 @@ h5, h6 {
   font-family: "Ubuntu Condensed";
 }
 
-a, td, p, button {
+a, td, th, p, button {
   font-family: "Ubuntu";
 }
 
@@ -52,22 +52,22 @@ p:hover {
 .crud__table {
   width: 80%;
   height: auto;
-  margin-bottom: 1em;
+  align-content: flex-start;
 }
 
 table {
   width: 100%;
+  color: white;
+  border-collapse: collapse;
 }
 
 th {
-  background-color: white;
-  border: 1px solid black;
-  padding: 1em;
+  border: 1px solid white;
+  padding: 2em;
 }
 
 td {
-  background-color: white;
-  border: 1px solid black;
+  border: 1px solid white;
   padding: 1em;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -76,23 +76,14 @@ td {
 
 .crud__form {
   width: 80%;
-  margin: 2% auto;
+  height: auto;
+  align-content: flex-start;
 }
 
-.four-columns, .three-columns, .two-columns {
+.two-columns {
   display: flex;
   justify-content: space-around;
   width: 100%;
-}
-
-.four-columns .crud__form-element {
-  margin-bottom: 1em;
-  width: 20%;
-}
-
-.three-columns .crud__form-element {
-  margin-bottom: 1em;
-  width: 30%;
 }
 
 .crud__form .crud__form-two-columns {
@@ -126,14 +117,9 @@ td {
   font-family: "Ubuntu", sans-serif;
   font-weight: 600;
   font-size: 1em;
-  transition: color 0.5s;
 }
 
-.crud__form-label--active label {
-  color: #ff5100;
-}
-
-.crud__form-input input, .crud__form-input select {
+.crud__form-input input {
   background-color: white;
   border: none;
   border-bottom: 1px solid #e6e6e6;
@@ -143,21 +129,6 @@ td {
   font-weight: 600;
   padding: 0.2em 0.5em;
   width: 100%;
-}
-
-textarea {
-  width: 100%;
-  height: 150px;
-}
-
-.crud__form-input input:focus, .crud__form-input textarea:focus {
-  outline: none;
-}
-.crud__form-input select {
-  outline: 0 !important;
-}
-.crud__form-input select:focus, .crud__form-input select:active {
-  outline: 0 !important;
 }
 
 .crud__store-button {
@@ -184,14 +155,8 @@ textarea {
   outline: 0;
 }
 
-#enviar {
-  display: block;
-  margin: 2% auto;
-  color: black;
-}
-
 .wrapper {
-  width: 60%;
+  width: 100%;
   margin: auto;
   background-color: white;
   border-radius: 10px;
@@ -237,6 +202,7 @@ button.active {
 
 .content.active {
   display: block;
+  padding: 2em;
 }
 
 * {
@@ -249,7 +215,7 @@ button.active {
 =======Structure======
 ======================*/
 body {
-  background-color: #2a4cbb;
+  background-color: #274c77;
   display: flex;
   flex-direction: column;
   margin: 1em auto;
@@ -271,7 +237,7 @@ header {
 }
 
 main {
-  margin: 1em 0;
+  margin: 5em 0;
   width: 100%;
 }
 
@@ -320,24 +286,11 @@ img {
 }
 
 /*====================
-========Subtitle======
-======================*/
-.subtitle {
-  background-color: #2a4cbb;
-  padding: 0.2em 0;
-  width: 100%;
-}
-.subtitle h2 {
-  text-align: center;
-}
-
-/*====================
 =========CRUD=========
 ======================*/
 .crud {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
   width: 100%;
   gap: 3em;
 }
