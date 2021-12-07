@@ -391,6 +391,7 @@ img {
   .crud__table, .crud__form {
     min-width: 100%;
     max-width: 100%;
+    margin-top: 2em;
   }
 
   .crud__table-grid {
@@ -431,6 +432,10 @@ img {
 
   .crud__store-button, .footer-element p {
     font-size: 1.5em;
+  }
+
+  .crud__form {
+    margin-top: 2em;
   }
 }
 
