@@ -1,3 +1,4 @@
+export const tab = () => {
 
 let tabs = document.querySelector(".wrapper");
 let tabButton = document.querySelectorAll(".tab-button");
@@ -21,4 +22,4 @@ tabs.onclick = e => {
     element.classList.add("active");
   }
 }
-
+}
