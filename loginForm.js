@@ -1,39 +1,31 @@
-export const form = () =>{
+// import {getFingerprint} from './client.js';
 
-    let loginForm = document.getElementById("crud__user-form");
-    let loginButton = document.getElementById("send__button");
-    let formElements = document.querySelectorAll(".crud_input");
-    
+// export let renderForm = () => {
+
+    let loginForm = document.getElementById("login-form");
+    let loginButton = document.getElementById("login-button");
+
     if(loginButton){
 
         loginButton.addEventListener("click", (event) => {
-        
-            event.preventDefault();
 
-            let clickEvent = new Event('message', {bubbles: true});
-            loginButton.dispatchEvent(clickEvent);
+            event.preventDefault();
     
             let url = loginForm.action;
             let data = new FormData(loginForm);
-
-            data.forEach((value, key ) => {        
-            console.log('Nombre:', key, 'Valor:', value);
-            }); 
             // data.append("fingerprint", getFingerprint());
     
             let sendPostRequest = async () => {
         
                 let request = await fetch(url, {
                     method: 'POST', 
-                    body: data,
-                    headers:{
-                        "Authorization" : "Bearer" + localStorage.getItem("token"),
-                    }     
-
+                    body: data
                 })
                 .then(response => {
                     if (!response.ok) throw response;
+    
                     console.log(response.data);
+    
                     return response.json();
                 })
                 .then(json => {
@@ -49,20 +41,10 @@ export const form = () =>{
                             let errors = jsonError.data;    
     
                             Object.keys(errors).forEach( (key) => {
-                                // let errorMessage = document.createElement('li');
-                                // errorMessage.textContent = errors[key];
-                                // console.log(errorMessage);
-                                // document.querySelector("#infoerror").innerHTML = errorMessage.textContent;
-                                document.querySelector(`[name=${key}]`).classList.add("error");
-                                document.querySelector(`[name=${key}]`).placeholder = errors[key];
+                                let errorMessage = document.createElement('li');
+                                errorMessage.textContent = errors[key];
+                                console.log(errorMessage)
                             })
-                            formElements.forEach(element => {
-                                if (element.tagName == "INPUT") {
-                                    element.addEventListener("click", () => {
-                                        element.classList.remove("error");
-                                    })
-                                }
-                            });
                         })   
                     }
     
@@ -72,6 +54,7 @@ export const form = () =>{
                 });
     
                 // En caso de usar Axios
+                
                 // let request = await axios.post(url, json)
                 // .then(response => {
                 //     console.log(response);
@@ -97,7 +80,8 @@ export const form = () =>{
                 //     }
                 // });
             };
-            sendPostRequest();      
+    
+            sendPostRequest();
+            
         });
     }
-}

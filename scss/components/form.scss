@@ -1,3 +1,7 @@
+  .error{
+  background-color: tomato;
+  }
+
   .crud__form {
     width: 80%;
     height: auto;
@@ -48,7 +52,6 @@
   
   .crud__form-input {
     input {
-      background-color: $white;
       border: none;
       border-bottom: 1px solid $grey;
       box-sizing: border-box;
@@ -86,5 +89,6 @@
     }
   }
 
+ 
 
   

@@ -3,11 +3,9 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
 		<title>Panel de control</title>
 		<meta name="description" content="descripción de la web alternativa a la primera, se recomienda 90 caracteres ni más ni menos">
         <meta name="keywords" 	 content="palabras clave, separadas, por comas">
-
         <!-- metas para facebook -->
 		<!-- 
         <meta property="fb:app_id"        content="añadir identificador" /> 
@@ -17,8 +15,10 @@
 		<meta property="og:description"   content="" /> 
         -->
         <link href="css/app.css" rel="stylesheet">
+        <!-- <link href="modal.css" rel="stylesheet"> -->
     </head>
     <body>
+        <alert-component></alert-component>
         <header>
             <div class="header-left">
                 <div class="header-element logo">
@@ -26,81 +26,73 @@
                         <path fill="currentColor" d="M8 11C7.45 11 7 10.55 7 10V8C7 7.45 7.45 7 8 7C8.55 7 9 7.45 9 8V10C9 10.55 8.55 11 8 11M17 10V8C17 7.45 16.55 7 16 7C15.45 7 15 7.45 15 8V10C15 10.55 15.45 11 16 11C16.55 11 17 10.55 17 10M22 5V20C22 21.1 21.1 22 20 22H4C2.9 22 2 21.1 2 20V5C2 3.9 2.9 3 4 3H20C21.1 3 22 3.9 22 5M4 20L13.06 20C12.96 19.35 12.89 18.64 12.83 17.94C12.56 17.96 12.3 18 12 18C8.24 18 6.31 15.73 6.23 15.63C5.88 15.21 5.94 14.58 6.36 14.22C6.78 13.87 7.41 13.93 7.77 14.35C7.83 14.43 9.23 16 12 16C12.27 16 12.5 15.97 12.74 15.95C12.71 14.75 12.73 13.74 12.74 13.26H10.93C10.28 13.26 9.75 12.7 9.75 12C9.77 11.75 10.07 7.82 11 5H4L4 20M20 20L20 5H12.6C11.74 7.19 11.37 10.73 11.27 11.76H13.08C13.72 11.76 14.25 12.32 14.25 13C14.25 13.04 14.21 14.15 14.24 15.6C15.54 15.11 16.22 14.35 16.23 14.34C16.58 13.92 17.21 13.85 17.63 14.2C18.06 14.55 18.12 15.18 17.77 15.61C17.71 15.68 16.55 17.05 14.32 17.68C14.38 18.5 14.46 19.29 14.58 20H20Z" />
                     </svg>
                 </div>
-
                 <div class="header-element title">
                     <h1>Panel de control</h1>
                 </div>
             </div>
         </header>
-
         <main>
             <div class="main-element crud">
-                <div class="crud__table">
-                    <table>
-                        <tr>
-                            <th>Titulo</th>
-                            <th>Author</th>
-                            <th>Price</th>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                    </table>
-                    <br><br>
-                    <textarea id="editor"></textarea>
-                </div>
+                <!-- <div class="crud__table" id="tabla" data-url="http://141.94.27.118:8080/api/users">
+                </div> -->
+                <filtro-component></filtro-component>
+                <table-component url="http://141.94.27.118:8080/api/users"></table-component>
                 <div class="crud__form">
-                    <form class="crud__admin-form" id="crud__user-form" action="/users/create" autocomplete="off"> 
+                    <form class="crud__admin-form" id="crud__user-form" action="http://141.94.27.118:8080/api/register" autocomplete="off"> 
                         <div class="wrapper">
                             <div class="buttonWrapper">
-                                <button class="tab-button active" data-id="form1">Contenido</button>
-                                <button class="tab-button" data-id="form2">Tienda</button>
+                                <button class="tab-button active" data-id="form1">Registro</button>
+                                <button class="tab-button" data-id="form2">Login</button>
                             </div>
                             <div class="contentWrapper">
                                 <div class="content active" id="form1">
                                     <div class="crud__form-two-columnss">
                                         <div class="crud__form-element">
                                             <div class="crud__form-label">
-                                                <label for="title">Title</label>
+                                                <label for="name">Nombre</label>
                                             </div>
                                             <div class="crud__form-input">
-                                                <input type="text" name="title">
+                                                <input class="crud_input" type="text" name="name">
                                             </div>
                                         </div>
                                         <div class="crud__form-element">
                                             <div class="crud__form-label">
-                                                <label for="author">Author</label>
+                                                <label for="email">Email</label>
                                             </div>
           
                                             <div class="crud__form-input">
-                                                <input type="text" name="author">
+                                                <input class="crud_input" type="text" name="email">
                                             </div>
                                         </div>
           
                                         <div class="crud__form-element">
                                             <div class="crud__form-label">
-                                                <label for="editor">Editor</label>
+                                                <label for="password">Password</label>
                                             </div>
           
                                             <div class="crud__form-input">
-                                                <input type="text" name="editor">
+                                                <input class="crud_input" type="password" name="password">
+                                            </div>
+                                        </div>
+                                        <div class="crud__form-element">
+                                            <div class="crud__form-label">
+                                                <label for="c_password">Repeat password</label>
+                                            </div>
+          
+                                            <div class="crud__form-input">
+                                                <input class="crud_input" type="password" name="c_password">
+                                            </div>
+                                        </div>
+                                        <div class="crud__form-element">
+                                            <div class="crud__form-label">
+                                                <label for="role">Role</label>
+                                            </div>
+          
+                                            <div class="crud__form-input">
+                                                <select name="role" id="">
+                                                    <option value="admin">Admin</option>
+                                                    <option value="user">User</option>
+                                                  </select>
                                             </div>
                                         </div>
                                     </div>
@@ -120,16 +112,24 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- <textarea name="editor1" id="editor1"></textarea> -->
                     </form>
+                    <br>
                     <div class="crud__form-element">
-                        <button class="crud__store-button">Guardar</button>
-                    </div> 
+                        <button id="send__button">Enviar</button>
+                    </div>
+                    <!-- <div class="crud__form-element">
+                        <button id="save__button">Guardar datos</button>
+                    </div>
+                    <div class="crud__form-element">
+                        <button id="print__button">Imprimir datos</button>
+                    </div> -->
                 </div> 
             </div> 
         </main> 
+
         <script type="module" src="js/app.js"></script>
-        <script src="node_modules/clientjs/dist/client.min.js"></script>
-        <script src="https://cdn.ckeditor.com/ckeditor5/31.1.0/classic/ckeditor.js"></script>
+        <script src="node_modules/clientjs/dist/client.min.js"></script> 
         <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
         <script>
             WebFont.load({
@@ -138,7 +138,6 @@
                 }
             });        
         </script>
-
         <!-- 
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

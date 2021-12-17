@@ -74,8 +74,12 @@ td {
   white-space: nowrap;
 }
 
+.error {
+  background-color: tomato;
+}
+
 .crud__form {
-  width: 80%;
+  width: 40%;
   height: auto;
   align-content: flex-start;
 }
@@ -120,7 +124,6 @@ td {
 }
 
 .crud__form-input input {
-  background-color: white;
   border: none;
   border-bottom: 1px solid #e6e6e6;
   box-sizing: border-box;
