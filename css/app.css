@@ -79,7 +79,7 @@ td {
 }
 
 .crud__form {
-  width: 40%;
+  width: 80%;
   height: auto;
   align-content: flex-start;
 }
@@ -208,6 +208,84 @@ button.active {
   padding: 2em;
 }
 
+:root {
+  --background: rgb(246, 247, 247);
+  --border: rgb(204, 194, 194);
+  --white: rgb(255, 255, 255);
+  --text: rgb(255, 255, 255);
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.container {
+  width: 50%;
+  height: auto;
+  display: block;
+  margin: 8% auto;
+  position: relative;
+}
+
+.container__title {
+  margin-bottom: 1.5em;
+}
+
+h2 {
+  font-size: 1.4em;
+  font-weight: 200;
+  color: var(--text);
+}
+
+h2, p {
+  text-align: center;
+}
+
+form {
+  padding: 1.5em;
+  margin-bottom: 0.2em;
+  border: 1px solid var(--border);
+}
+form:last-child {
+  border: none;
+  width: 100%;
+  padding: 0;
+}
+
+form, .form__input, .button__login {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+
+input, button {
+  padding: 0.8em;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+}
+
+label {
+  margin: 0.2em auto;
+  font-size: 0.8em;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 0.5em;
+}
+
+.form__input, .form__conditions {
+  margin-bottom: 1em;
+  width: 100%;
+}
+
+.continue {
+  background-color: #c9356e;
+  border: none;
+  color: var(--white);
+  border-radius: 2px;
+  padding: 0.6em 0;
+  cursor: pointer;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -292,8 +370,6 @@ img {
 =========CRUD=========
 ======================*/
 .crud {
-  display: flex;
-  justify-content: space-between;
   width: 100%;
   gap: 3em;
 }
