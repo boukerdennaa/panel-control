@@ -1,5 +1,4 @@
 :root {
-	--background: rgb(246, 247, 247);
 	--border: rgb(204, 194, 194);
 	--white: rgb(255, 255, 255);
 	--text:  rgb(255, 255, 255);
@@ -29,13 +28,14 @@ h2, p {
 form {
 	padding: 1.5em;
 	margin-bottom: .2em;
-	border: 1px solid var(--border);
+	
 	&:last-child {
 		border: none;
 		width: 100%;
 		padding: 0;
 	}
 }
+
 form, .form__input, .button__login {
 	display: flex;
 	flex-flow: column nowrap;

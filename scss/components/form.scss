@@ -47,9 +47,14 @@
     font-family: $font-stack;
     font-weight: 600;
     font-size: 1em;
+    color: black;
   }
-  
-  
+
+  .error-input{
+    background-color: red;
+  }
+
+
   .crud__form-input {
     input {
       border: none;

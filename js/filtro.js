@@ -22,26 +22,22 @@ class TableFilter extends HTMLElement {
                 margin-bottom: 1em;
             }
             input {
-                border: none;
+                font-family: 'Ubuntu';
                 font-size: 1.2em;
-                padding: 0.4em 0.6em;
+                padding: 0.5em;
                 text-align: left;
-            }
-            h4{
-                font-family: Ubuntu;
-                color:#fff;
             }
         </style>
         <form>
-            <h4>Filtrar tabla</h4>
             <input type="text" id="search">
         </form>`;  
-
-        let buscador = this.shadow.querySelector('#search');
         
-        buscador.addEventListener('keyup', (event) => {
+        this.shadow.querySelector('#search').addEventListener('keyup', (event) => {
             
-            document.dispatchEvent(new CustomEvent('filtro', {
+            document.dispatchEvent(new CustomEvent('filterSearch', {
+                detail: {
+                    search: event.target.value,
+                }
             }));
         });
     }      

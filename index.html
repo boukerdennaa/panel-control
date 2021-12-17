@@ -18,7 +18,7 @@
         <!-- <link href="modal.css" rel="stylesheet"> -->
     </head>
     <body>
-        <alert-component></alert-component>
+        <modal-component></modal-component>
         <header>
             <div class="header-left">
                 <div class="header-element logo">
@@ -33,17 +33,16 @@
         </header>
         <main>
             <div class="main-element crud">
-                <!-- <div class="crud__table" id="tabla" data-url="http://141.94.27.118:8080/api/users">
-                </div> -->
                 <filtro-component></filtro-component>
                 <table-component url="http://141.94.27.118:8080/api/users"></table-component>
                 <div class="crud__form">
-                    <form class="crud__admin-form" id="crud__user-form" action="http://141.94.27.118:8080/api/register" autocomplete="off"> 
+                    <form class="crud__admin-form" id="crud__user-form" action="http://141.94.27.118:8080/api/users" autocomplete="off"> 
                         <div class="wrapper">
                             <div class="buttonWrapper">
                                 <button class="tab-button active" data-id="form1">Registro</button>
                                 <button class="tab-button" data-id="form2">Login</button>
                             </div>
+                            <ul id="form-errors"></ul>
                             <div class="contentWrapper">
                                 <div class="content active" id="form1">
                                     <div class="crud__form-two-columnss">

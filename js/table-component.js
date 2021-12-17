@@ -1,19 +1,11 @@
-// Pillar las cualidades de un objeto y ampliarlas
-// Table amplia las cualidades de HTMElement
-// herencia, los objetos heredan
-// Table es "hijo" de HTMLElement
 class Table extends HTMLElement {
-// constructor, es lo primero que arranca
+
     constructor() {
-        // super() ejecuta todo lo que hay en HTMLElement
         super();
-        // Activa el Shadow DOM
-        // Propiedades del objeto HTMLElement
         this.shadow = this.attachShadow({ mode: 'open' });
         this.api = 'http://141.94.27.118:8080/api';
+        this.data = [];
 
-        // "newData" "newURL" evento creado personalizados
-        // la tabla escucha si hay este evento, form envia info al servidor, la tabla recoge los datos y vuelve a pintar la tabla
         document.addEventListener("newData",( event =>{
             this.loadData();
         }));
@@ -21,13 +13,15 @@ class Table extends HTMLElement {
         document.addEventListener("newUrl",( event =>{
             this.setAttribute('url', this.api + event.detail.url);
         }));
+
+        document.addEventListener("filterSearch",( event =>{
+            this.filter(event.detail.search);
+        }));
+
     }
 
-    // que atributos deseas vigilar, cada vez que url cambie
     static get observedAttributes() { return ['url']; }
 
-// se ejecuta cuando conectas el componente en tu HTML
-// Ciclo de vida del componente
     connectedCallback() {
         this.loadData();
     }
@@ -35,7 +29,7 @@ class Table extends HTMLElement {
     attributeChangedCallback(){
         this.loadData();
     }
-// llamas a los datos
+
     loadData() {
 
         let url = this.getAttribute('url');
@@ -61,7 +55,7 @@ class Table extends HTMLElement {
     }
 
     render() {
-// creacion del Shadow DOM - CSS y HTML
+
         this.shadow.innerHTML = 
         `
         <style>
@@ -73,69 +67,91 @@ class Table extends HTMLElement {
                 border: 1px solid hsl(0, 0%, 87%);
                 color: hsl(0, 0%, 100%);
                 font-family: 'Ubuntu';
-                padding: 8px;
+                padding: 0.2em 0.5em; 
+            }
+            td{
                 text-align: left;
+            }
+            th{
+                text-align: center;
+            }
+            svg {
+                cursor: pointer;
+                height: 1.5em;
+                width: 1.5em;
+            }
+            svg path {
+                fill: hsl(0, 0%, 100%);
+            }
+            svg:hover path {
+                fill: hsl(19, 100%, 50%);
             }
         </style>
         <table>
             <thead>
-                ${this.getHeader()}
+                ${this.getTableHeader()}
             </thead>
             <tbody>
                 ${this.getTableData()}
             </tbody>
         </table>`;      
+        
+        let editButtons = this.shadow.querySelectorAll(".edit-button");
     }
 
-    getHeader() {
+    getTableHeader() {
 
         let header = '';
+
         Object.keys(this.data[0]).forEach( (key) => {
             header += `<th>${key}</th>`;
         });
-        // header += `<th></th>`;
+
+        header += `<th></th>`;
+
         return `<tr>${header}</tr>`;
     }
 
     getTableData() {
 
         let data = '';
+
         this.data.forEach(element => {
+
             data += `<tr>`;
+
             Object.values(element).forEach( (value) => {
                 data += `<td>${value}</td>`;
             });
 
-            // data += 
-            // `<td class="edit-button" data-id="${element.id}">
-            //     <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-            //         <path fill="currentColor" d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" />
-            //     </svg>
-            // </td>`;
+            data += 
+            `<td class="edit-button" data-id="${element.id}">
+                <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" />
+                </svg>
+            </td>`;
             
             data += `</tr>`;
         });
 
         return data;
-    }           
+    }  
+      
+    filter(search) {
 
-filter(search) {
+        let table = this.shadow.querySelector('table');
+        let rows = table.querySelectorAll('tbody tr');
 
-    let table = this.shadow.querySelector('table');
-    let rows = table.querySelectorAll('tbody tr');
+        rows.forEach(row => {
 
-    rows.forEach(row => {
-
-        let text = row.innerText.toLowerCase();
-        
-        if(text.indexOf(search.toLowerCase()) > -1) {
-            row.style.display = '';
-        } else {
-            row.style.display = 'none';
-        }
-    });
+            let text = row.innerText.toLowerCase();
+            
+            if(text.indexOf(search.toLowerCase()) > -1) {
+                row.style.display = '';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    }
 }
-}
-
-// Para que funcione el componente Table
 customElements.define('table-component', Table);

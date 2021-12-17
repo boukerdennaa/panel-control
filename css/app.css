@@ -121,6 +121,7 @@ td {
   font-family: "Ubuntu", sans-serif;
   font-weight: 600;
   font-size: 1em;
+  color: black;
 }
 
 .crud__form-input input {
@@ -209,7 +210,6 @@ button.active {
 }
 
 :root {
-  --background: rgb(246, 247, 247);
   --border: rgb(204, 194, 194);
   --white: rgb(255, 255, 255);
   --text: rgb(255, 255, 255);
@@ -244,7 +244,6 @@ h2, p {
 form {
   padding: 1.5em;
   margin-bottom: 0.2em;
-  border: 1px solid var(--border);
 }
 form:last-child {
   border: none;
@@ -370,6 +369,8 @@ img {
 =========CRUD=========
 ======================*/
 .crud {
+  display: flex;
+  justify-content: space-between;
   width: 100%;
   gap: 3em;
 }
