@@ -27,9 +27,17 @@ class TableFilter extends HTMLElement {
                 padding: 0.5em;
                 text-align: left;
             }
+
+            label{
+                font-family: Ubuntu;
+                font-size:1.1em;
+                padding: .5em;
+                color: #fff;
+            }
         </style>
         <form>
-            <input type="text" id="search">
+            <label for="filtro">Filtrar datos tabla</label>
+            <input type="text" id="search" name="filtro">
         </form>`;  
         
         this.shadow.querySelector('#search').addEventListener('keyup', (event) => {

@@ -124,6 +124,10 @@ td {
   color: black;
 }
 
+.error-input {
+  background-color: red;
+}
+
 .crud__form-input input {
   border: none;
   border-bottom: 1px solid #e6e6e6;
@@ -241,11 +245,11 @@ h2, p {
   text-align: center;
 }
 
-form {
+.container form {
   padding: 1.5em;
   margin-bottom: 0.2em;
 }
-form:last-child {
+.container form:last-child {
   border: none;
   width: 100%;
   padding: 0;
@@ -295,7 +299,7 @@ label {
 =======Structure======
 ======================*/
 body {
-  background-color: #274c77;
+  background-color: #242e42;
   display: flex;
   flex-direction: column;
   margin: 1em auto;
@@ -512,10 +516,6 @@ img {
 
   .crud__store-button, .footer-element p {
     font-size: 1.5em;
-  }
-
-  .crud__form {
-    margin-top: 2em;
   }
 }
 

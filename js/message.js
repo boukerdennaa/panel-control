@@ -43,9 +43,9 @@ class AlertMessage extends HTMLElement {
         `
         <style>
             #modal{
-                background-color: black;
+                background-color: #333;
                 height: 10vh;
-                opacity: 0;
+                display:none;
                 padding: 0 0.5em;
                 position: fixed;
                 top:50%;
@@ -55,16 +55,17 @@ class AlertMessage extends HTMLElement {
                 width: 30%;
             }
             #modal.success{
-                border-right: 0.5em solid blue;
+                border-top: 1em solid #04AA6D;;
             }
 
             #modal.active{
-                opacity: 1;
+                display:block;
             }
             p{
                 font-family: 'Ubuntu';
                 font-size: 1.2em;
-                color:white;
+                color: #fff;
+                text-align: center;
             }
         </style>
         <div id="modal">
