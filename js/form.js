@@ -6,8 +6,8 @@ let btnForm = document.querySelector(".crud__store-button");
 btnForm.addEventListener('click', () => {
         let formData = new FormData(formElement);
 
-        for (const [key, value] of formData) {
+        formData.forEach((value, key ) => {        
             console.log('Nombre:', key, 'Valor:', value);
-        }
-});
+        }); 
+    }); 
 }
