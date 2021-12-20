@@ -10,7 +10,6 @@ class TableFilter extends HTMLElement {
     }
 
     render() {
-
         this.shadow.innerHTML = 
         `
         <style>
@@ -23,9 +22,8 @@ class TableFilter extends HTMLElement {
             }
             input {
                 font-family: 'Ubuntu';
-                font-size: 1.2em;
+                font-size: .8em;
                 padding: 0.5em;
-                text-align: left;
             }
 
             label{
@@ -50,5 +48,4 @@ class TableFilter extends HTMLElement {
         });
     }      
 }
-
 customElements.define('filtro-component', TableFilter);

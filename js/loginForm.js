@@ -28,10 +28,12 @@
     
                     return response.json();
                 })
+
                 .then(json => {
                     localStorage.setItem('token', json.data);
                     console.log(json.data);
                 })
+
                 .catch(error => {
                     
                     if(error.status == '400'){
@@ -80,8 +82,6 @@
                 //     }
                 // });
             };
-    
-            sendPostRequest();
-            
+            sendPostRequest();  
         });
     }

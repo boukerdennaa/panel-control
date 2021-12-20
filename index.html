@@ -36,16 +36,21 @@
                 <filtro-component></filtro-component>
                 <table-component url="http://141.94.27.118:8080/api/users"></table-component>
                 <div class="crud__form">
-                    <form class="crud__admin-form" id="crud__user-form" action="http://141.94.27.118:8080/api/users" autocomplete="off"> 
+                    <form class="crud__admin-form" id="crud__user-form" action="http://141.94.27.118:8080/api/users"> 
                         <div class="wrapper">
                             <div class="buttonWrapper">
-                                <button class="tab-button active" data-id="form1">Registro</button>
+                                <button class="tab-button active" data-id="form1">Register</button>
                                 <button class="tab-button" data-id="form2">Login</button>
                             </div>
                             <ul id="form-errors"></ul>
                             <div class="contentWrapper">
                                 <div class="content active" id="form1">
                                     <div class="crud__form-two-columnss">
+                                        <div class="crud__form-element">
+                                            <div class="crud__form-input">
+                                                <input class="crud_input" type="hidden" name="id">
+                                            </div>
+                                        </div>
                                         <div class="crud__form-element">
                                             <div class="crud__form-label">
                                                 <label for="name">Nombre</label>
@@ -60,7 +65,7 @@
                                             </div>
           
                                             <div class="crud__form-input">
-                                                <input class="crud_input" type="text" name="email">
+                                                <input class="crud_input" type="email" name="email">
                                             </div>
                                         </div>
           
@@ -75,7 +80,7 @@
                                         </div>
                                         <div class="crud__form-element">
                                             <div class="crud__form-label">
-                                                <label for="c_password">Repeat password</label>
+                                                <label for="c_password">Confirm password</label>
                                             </div>
           
                                             <div class="crud__form-input">
@@ -101,11 +106,20 @@
                                 <div class="crud__form-two-columns">
                                     <div class="crud__form-element">
                                         <div class="crud__form-label">
-                                            <label for="price">Price</label>
+                                            <label for="email">Email</label>
                                         </div>
       
                                         <div class="crud__form-input">
-                                            <input type="text" name="price">
+                                            <input type="email" name="price">
+                                        </div>
+                                    </div>
+                                    <div class="crud__form-element">
+                                        <div class="crud__form-label">
+                                            <label for="password">Contraseña</label>
+                                        </div>
+      
+                                        <div class="crud__form-input">
+                                            <input type="password" name="price">
                                         </div>
                                     </div>
                                 </div>
@@ -117,12 +131,6 @@
                     <div class="crud__form-element">
                         <button id="send__button">Enviar</button>
                     </div>
-                    <!-- <div class="crud__form-element">
-                        <button id="save__button">Guardar datos</button>
-                    </div>
-                    <div class="crud__form-element">
-                        <button id="print__button">Imprimir datos</button>
-                    </div> -->
                 </div> 
             </div> 
         </main> 

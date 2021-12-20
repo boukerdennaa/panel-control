@@ -6,7 +6,6 @@ export let form = () =>{
     if(loginButton){
 
         loginButton.addEventListener("click", (event) => {
-
             event.preventDefault();
     
             forms.forEach(form => { 
@@ -24,10 +23,12 @@ export let form = () =>{
                         method: 'POST', 
                         body: data
                     })
+                    
                     .then(response => {
                         if (!response.ok) throw response;
                         return response.json();
                     })
+
                     .then(json => {
                         document.dispatchEvent(new CustomEvent('newData'));
 
@@ -41,6 +42,14 @@ export let form = () =>{
                         }
                     })
                     .catch(error => {
+
+                        // if(jsonError.data)(
+                        //     document.dispatchEvent(new CustomEvent('validationError',{
+                        //         detail: {
+                        //             errors: jsonError.data,
+                        //         }
+                        //     }))
+                        // );
                         
                         if(error.status == '400'){
 
@@ -50,7 +59,7 @@ export let form = () =>{
                                 let errors = jsonError.data;
 
                                 Object.keys(errors).forEach((key) => {
-                                    document.querySelector(`[name=${key}]`).classList.add("error-input")
+                                    // document.querySelector(`[name=${key}]`).classList.add("error-input")
                                     document.querySelector(`[name=${key}]`).placeholder = errors[key][0];
                                 })
                             })   
@@ -61,32 +70,33 @@ export let form = () =>{
                         }
                     });
                 };
-        
                 sendPostRequest();
             });
         });
     }
 
-    document.addEventListener("showElement",( event =>{
-
+    document.addEventListener("show",( event =>{
         fetch(event.detail.url, { 
+            // method: 'PUT', 
             headers: {
                 'Authorization': 'Bearer ' + localStorage.getItem('token'),
             }
         }) 
+
         .then(response => {
             if (!response.ok) throw response;
-
             return response.json();
         })
+    
         .then(json => {
             let data = json.data;
 
-            Object.entries(data).forEach( ([key,value]) => {
-                document.querySelector(`[name=${key}]`).value = value;
+            Object.entries(data).forEach( ([key]) => {
+                let valor = document.querySelector(`[name=${key}`).value = data[key]; 
+                console.log(valor);
             });
         })
         .catch(error => console.log(error));
-    }));
-// 
+    })); 
+
 }
